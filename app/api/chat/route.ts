@@ -1,6 +1,8 @@
 import { db } from '@/lib/db'
 import { NextResponse } from 'next/server'
 
+export const maxDuration = 60; // Allow more time on Vercel for OpenRouter API calls
+
 export async function POST(request: Request) {
     try {
         const { widgetId, messages, conversationId } = await request.json()
