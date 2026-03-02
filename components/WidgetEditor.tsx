@@ -206,6 +206,12 @@ function SettingsForm({ widget }: { widget: any }) {
                     <p style={{ fontSize: '0.8rem', color: 'var(--secondary)', marginTop: 8 }}>Define how the AI should behave.</p>
                 </div>
 
+                <div style={{ marginBottom: 20 }}>
+                    <Label>OpenRouter API Key (Optional)</Label>
+                    <Input name="openRouterKey" type="password" defaultValue={widget.openRouterKey || ''} placeholder="sk-or-v1-..." />
+                    <p style={{ fontSize: '0.8rem', color: 'var(--secondary)', marginTop: 8 }}>If provided, this bot will use its own API key instead of the system default.</p>
+                </div>
+
                 {/* Appearance */}
                 <div style={{ marginBottom: 24, paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.1)' }}>
                     <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: 16, display: 'flex', alignItems: 'center', gap: 8 }}>

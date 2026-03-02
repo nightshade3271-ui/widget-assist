@@ -54,7 +54,9 @@ export async function POST(request: Request) {
 
         // Fetch System Settings
         const settings = await db.systemSettings.findUnique({ where: { id: 'default' } })
-        const apiKey = settings?.openRouterKey || process.env.OPENROUTER_API_KEY
+
+        // Use Widget's custom key, otherwise fallback to system default
+        const apiKey = widget.openRouterKey || settings?.openRouterKey || process.env.OPENROUTER_API_KEY
         const model = settings?.defaultModel || 'google/gemini-2.0-flash-001'
 
         if (!apiKey) {

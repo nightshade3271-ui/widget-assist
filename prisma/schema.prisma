@@ -23,6 +23,7 @@ model Widget {
   leadFormMessage     String   @default("Interested? Let's connect!")
   leadKeywords        String   @default("price,pricing,cost,how much,interested,quote,buy,purchase,get started,sign up,contact,demo,trial")
   leadMessageThreshold Int     @default(6)
+  openRouterKey       String?
   
   faqs          FAQ[]
   conversations Conversation[]
