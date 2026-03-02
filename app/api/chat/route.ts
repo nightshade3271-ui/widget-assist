@@ -99,12 +99,6 @@ export async function POST(request: Request) {
             role: 'assistant',
             content: botMessage,
             conversationId: currentConversationId
-        }, {
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'POST',
-                'Access-Control-Allow-Headers': 'Content-Type',
-            }
         })
 
     } catch (error) {
@@ -114,11 +108,5 @@ export async function POST(request: Request) {
 }
 
 export async function OPTIONS() {
-    return new NextResponse(null, {
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type',
-        }
-    })
+    return new NextResponse(null)
 }

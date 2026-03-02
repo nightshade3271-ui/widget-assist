@@ -28,10 +28,5 @@ export async function GET(
         return new NextResponse('Widget not found', { status: 404 })
     }
 
-    return NextResponse.json(widget, {
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET',
-        }
-    })
+    return NextResponse.json(widget)
 }
